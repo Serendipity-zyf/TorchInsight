@@ -1,20 +1,20 @@
 # Usage Guide
 
-This document provides detailed usage instructions and examples for TorchPrint.
+This document provides detailed usage instructions and examples for TorchInsight.
 
 ## Basic Usage
 
-TorchPrint offers two main ways to use it:
+TorchInsight offers two main ways to use it:
 
 1. Use the `analyze_model` function for quick analysis
 2. Use the `ModelAnalyzer` class for more detailed analysis and customization
 
 ### Using the analyze_model Function
 
-The `analyze_model` function is the simplest way to use TorchPrint and is suitable for most scenarios:
+The `analyze_model` function is the simplest way to use TorchInsight and is suitable for most scenarios:
 
 ```python
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 summary = analyze_model(
     model,                    # PyTorch model
@@ -30,7 +30,7 @@ print(summary)
 The `ModelAnalyzer` class provides more control and customization options:
 
 ```python
-from torchprint import ModelAnalyzer
+from torchinsight import ModelAnalyzer
 
 # Create analyzer instance
 analyzer = ModelAnalyzer(
@@ -54,7 +54,7 @@ print(summary)
 
 ### Multiple Input Models
 
-TorchPrint supports analyzing models with multiple inputs:
+TorchInsight supports analyzing models with multiple inputs:
 
 ```python
 summary = analyze_model(
@@ -98,7 +98,7 @@ summary = analyze_model(
 
 ```python
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 class CNN(nn.Module):
     def __init__(self):
@@ -124,7 +124,7 @@ print(summary)
 
 ```python
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 class TransformerModel(nn.Module):
     def __init__(self, vocab_size=1000, embed_dim=512, num_heads=8, num_layers=6):

@@ -1,11 +1,11 @@
 """
-Simple example of using torchprint.
+Simple example of using torchinsight.
 """
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 
 class SimpleModel(nn.Module):
@@ -14,7 +14,7 @@ class SimpleModel(nn.Module):
         self.conv1 = nn.Conv2d(3, 16, kernel_size=3, padding=1)
         self.pool = nn.MaxPool2d(2, 2)
         self.fc = nn.Linear(16 * 16 * 16, 10)
-        
+
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
         x = x.view(-1, 16 * 16 * 16)
@@ -25,7 +25,7 @@ class SimpleModel(nn.Module):
 def main():
     # Create model
     model = SimpleModel()
-    
+
     # Analyze model
     summary = analyze_model(
         model,
@@ -33,7 +33,7 @@ def main():
         input_dims=(3, 32, 32),  # Input dimensions (channels, height, width)
         batch_size=64,  # Batch size
     )
-    
+
     # Print summary
     print(summary)
 

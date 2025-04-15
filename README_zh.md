@@ -1,6 +1,6 @@
-# TorchPrint
+# TorchInsight
 
-TorchPrint 是一个增强型 PyTorch 模型分析工具，提供类似于 torchinfo 的功能，但具有自定义格式和额外特性。
+TorchInsight 是一个增强型 PyTorch 模型分析工具，提供类似于 torchinfo 的功能，但具有自定义格式和额外特性。
 
 ## 特点
 
@@ -14,7 +14,7 @@ TorchPrint 是一个增强型 PyTorch 模型分析工具，提供类似于 torch
 ## 安装
 
 ```bash
-pip install torchprint
+pip install torchinsight
 ```
 
 ## 快速开始
@@ -22,7 +22,7 @@ pip install torchprint
 ```python
 import torch
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 # 创建一个简单的模型
 class SimpleModel(nn.Module):
@@ -55,7 +55,7 @@ print(summary)
 
 ## 高级用法
 
-TorchPrint 支持多种输入格式和数据类型：
+TorchInsight 支持多种输入格式和数据类型：
 
 ```python
 # 分析具有多个输入的模型

@@ -1,6 +1,6 @@
 # API 参考
 
-本文档提供了 TorchPrint API 的详细信息。
+本文档提供了 TorchInsight API 的详细信息。
 
 ## 主要函数
 
@@ -44,7 +44,7 @@ def analyze_model(
 
 ```python
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 class SimpleModel(nn.Module):
     def __init__(self):
@@ -133,7 +133,7 @@ def summary(self, max_depth: int = 3) -> str:
 **示例：**
 
 ```python
-from torchprint import ModelAnalyzer
+from torchinsight import ModelAnalyzer
 
 analyzer = ModelAnalyzer(model, model_name="MyModel")
 analyzer.analyze(input_dims=(3, 224, 224), batch_size=32)
@@ -143,7 +143,7 @@ print(summary)
 
 ## 实用函数
 
-TorchPrint 还提供了几个内部使用但对自定义分析有用的实用函数：
+TorchInsight 还提供了几个内部使用但对自定义分析有用的实用函数：
 
 - `count_parameters(module)`: 计算模块中的参数数量。
 - `estimate_memory_usage(module, input_size, output_size)`: 估计模块的内存使用量（以字节为单位）。

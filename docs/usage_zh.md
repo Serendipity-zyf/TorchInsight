@@ -1,10 +1,10 @@
 # 使用指南
 
-本文档提供了 TorchPrint 的详细使用说明和示例。
+本文档提供了 TorchInsight 的详细使用说明和示例。
 
 ## 基本用法
 
-TorchPrint 提供了两种主要的使用方式：
+TorchInsight 提供了两种主要的使用方式：
 
 1. 使用 `analyze_model` 函数进行快速分析
 2. 使用 `ModelAnalyzer` 类进行更详细的分析和自定义
@@ -14,7 +14,7 @@ TorchPrint 提供了两种主要的使用方式：
 `analyze_model` 函数是最简单的使用方式，适合大多数场景：
 
 ```python
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 summary = analyze_model(
     model,                    # PyTorch 模型
@@ -30,7 +30,7 @@ print(summary)
 `ModelAnalyzer` 类提供了更多的控制和自定义选项：
 
 ```python
-from torchprint import ModelAnalyzer
+from torchinsight import ModelAnalyzer
 
 # 创建分析器实例
 analyzer = ModelAnalyzer(
@@ -54,7 +54,7 @@ print(summary)
 
 ### 多输入模型
 
-TorchPrint 支持分析具有多个输入的模型：
+TorchInsight 支持分析具有多个输入的模型：
 
 ```python
 summary = analyze_model(
@@ -98,7 +98,7 @@ summary = analyze_model(
 
 ```python
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 class CNN(nn.Module):
     def __init__(self):
@@ -124,7 +124,7 @@ print(summary)
 
 ```python
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 class TransformerModel(nn.Module):
     def __init__(self, vocab_size=1000, embed_dim=512, num_heads=8, num_layers=6):

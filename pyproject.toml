@@ -3,12 +3,12 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "torchprint"
+name = "torchinsight"
 version = "0.1.0"
 description = "Enhanced model analysis tool for PyTorch models"
 readme = "README.md"
 authors = [
-    {name = "PixelCookie", email = "zhangyf283@mail2.sysu.edu.cn"}
+    {name = "PixelCookie", email = "metazyf@gmail.com"}
 ]
 license = {text = "MIT"}
 classifiers = [
@@ -32,8 +32,8 @@ dependencies = [
 requires-python = ">=3.7"
 
 [project.urls]
-"Homepage" = "https://github.com/Serendipity-zyf/torchprint"
-"Bug Tracker" = "https://github.com/Serendipity-zyf/torchprint/issues"
+"Homepage" = "https://github.com/Serendipity-zyf/torchinsight"
+"Bug Tracker" = "https://github.com/Serendipity-zyf/torchinsight/issues"
 
 [tool.setuptools]
-packages = ["torchprint"]
+packages = ["torchinsight"]

@@ -8,14 +8,14 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="torchprint",
+    name="torchinsight",
     version=VERSION,
     author="PixelCookie",
     author_email="metazyf@gmail.com",
     description="Enhanced model analysis tool for PyTorch models",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Serendipity-zyf/torchprint",
+    url="https://github.com/Serendipity-zyf/torchinsight",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

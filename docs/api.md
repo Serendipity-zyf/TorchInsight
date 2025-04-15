@@ -1,6 +1,6 @@
 # API Reference
 
-This document provides detailed information about the TorchPrint API.
+This document provides detailed information about the TorchInsight API.
 
 ## Main Functions
 
@@ -44,7 +44,7 @@ Analyzes a PyTorch model and returns a formatted summary string.
 
 ```python
 import torch.nn as nn
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 class SimpleModel(nn.Module):
     def __init__(self):
@@ -133,7 +133,7 @@ Generates a summary of the model.
 **Example:**
 
 ```python
-from torchprint import ModelAnalyzer
+from torchinsight import ModelAnalyzer
 
 analyzer = ModelAnalyzer(model, model_name="MyModel")
 analyzer.analyze(input_dims=(3, 224, 224), batch_size=32)
@@ -143,7 +143,7 @@ print(summary)
 
 ## Utility Functions
 
-TorchPrint also provides several utility functions that are used internally but can be useful for custom analysis:
+TorchInsight also provides several utility functions that are used internally but can be useful for custom analysis:
 
 - `count_parameters(module)`: Count the number of parameters in a module.
 - `estimate_memory_usage(module, input_size, output_size)`: Estimate the memory usage of a module in bytes.

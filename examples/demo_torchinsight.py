@@ -1,7 +1,7 @@
 """
-Complete demo script for the torchprint module.
+Complete demo script for the torchinsight module.
 
-This script demonstrates all the features of the torchprint module:
+This script demonstrates all the features of the torchinsight module:
 1. FLOPS calculation with automatic unit selection (K, M, G)
 2. Input dimensions specification without batch dimension
 3. Long dtype specification for specific inputs
@@ -11,14 +11,14 @@ This script demonstrates all the features of the torchprint module:
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchprint import analyze_model
+from torchinsight import analyze_model
 
 
 # Simple logger for demo purposes
 class ColorLogger:
     def __init__(self, name):
         self.name = name
-        
+
     def info(self, message):
         print(f"[INFO] {self.name}: {message}")
 
@@ -30,42 +30,42 @@ class FMCTR(nn.Module):
         self.feature_dims = feature_dims
         self.dense_feature_dim = dense_feature_dim
         self.embed_dim = embed_dim
-        
+
         # Embedding layers for sparse features
-        self.embeddings = nn.ModuleList([
-            nn.Embedding(dim, embed_dim) for dim in feature_dims
-        ])
-        
+        self.embeddings = nn.ModuleList([nn.Embedding(dim, embed_dim) for dim in feature_dims])
+
         # FM part
         self.fm_first_order = nn.Linear(dense_feature_dim, 1)
         self.fm_second_order_size = len(feature_dims) * embed_dim + dense_feature_dim
-        
+
         # Deep part
         self.deep = nn.Sequential(
             nn.Linear(self.fm_second_order_size, 64),
             nn.ReLU(),
             nn.Linear(64, 32),
             nn.ReLU(),
-            nn.Linear(32, 1)
+            nn.Linear(32, 1),
         )
-        
+
     def forward(self, dense_input, sparse_indices):
         # Process dense features
         first_order = self.fm_first_order(dense_input)
-        
+
         # Process sparse features
-        embeddings = [self.embeddings[i](sparse_indices[:, i]) for i in range(len(self.feature_dims))]
-        
+        embeddings = [
+            self.embeddings[i](sparse_indices[:, i]) for i in range(len(self.feature_dims))
+        ]
+
         # Concatenate all features for deep part
         concat_features = [dense_input]
         for emb in embeddings:
             concat_features.append(emb)
-        
+
         all_features = torch.cat([feat.view(feat.size(0), -1) for feat in concat_features], dim=1)
-        
+
         # Deep part
         deep_out = self.deep(all_features)
-        
+
         # Final output
         output = first_order + deep_out
         return output
@@ -179,11 +179,11 @@ def create_attention_model():
 
 
 def demo_complete():
-    """Demonstrate all features of the torchprint module."""
-    logger.info("Starting complete demo for torchprint module")
+    """Demonstrate all features of the torchinsight module."""
+    logger.info("Starting complete demo for torchinsight module")
 
     print("\n" + "=" * 70)
-    print("TORCHPRINT MODULE DEMO WITH MULTIPLE ARCHITECTURES")
+    print("TORCHINSIGHT MODULE DEMO WITH MULTIPLE ARCHITECTURES")
     print("=" * 70)
 
     # Create and analyze FMCTR model
