@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torchprint"
+version = "0.1.0"
+description = "Enhanced model analysis tool for PyTorch models"
+readme = "README.md"
+authors = [
+    {name = "PixelCookie", email = "zhangyf283@mail2.sysu.edu.cn"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["pytorch", "deep-learning", "model-analysis", "visualization"]
+dependencies = [
+    "torch>=1.7.0",
+    "colorama>=0.4.4",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+"Homepage" = "https://github.com/Serendipity-zyf/torchprint"
+"Bug Tracker" = "https://github.com/Serendipity-zyf/torchprint/issues"
+
+[tool.setuptools]
+packages = ["torchprint"]
